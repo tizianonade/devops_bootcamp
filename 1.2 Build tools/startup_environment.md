@@ -86,12 +86,12 @@ tar -xzvf maven-3.8.6.tar.gz && sudo mv apache-maven-3.8.6 /opt/ && rm maven-3.8
 
 ```Bash
 echo '#!/bin/bash' > env_init.sh &&
-echo 'echo "M2_HOME=\"/opt/apache-maven-3.6.3\"" >> ~/.profile' >> env_init.sh &&
+echo 'echo -e "\nM2_HOME=\"/opt/apache-maven-3.6.3\"" >> ~/.profile' >> env_init.sh &&
 echo 'echo -n "PATH=\"$M2_HOME/bin:" >> ~/.profile' >> env_init.sh && 
 echo 'echo -n "$" >> ~/.profile' >> env_init.sh &&
 echo 'echo "PATH\"" >> ~/.profile' >> env_init.sh &&
 echo 'echo "export PATH" >> ~/.profile' >> env_init.sh &&
-sudo bash env_init.sh && rm env_init.sh && source ~/profile
+sudo chmod u+x env_init.sh && bash env_init.sh && rm env_init.sh && source ~/.profile 
 ```
 
 4. Test

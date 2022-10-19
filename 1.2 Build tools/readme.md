@@ -1,5 +1,4 @@
 # Module 1.2 Build tools
 
-## Requirements
-
-> Startup environment link
+1. Startup the environment
+2. Look at memo file
