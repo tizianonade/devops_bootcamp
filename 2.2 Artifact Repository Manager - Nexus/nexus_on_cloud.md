@@ -44,14 +44,18 @@ echo ""nexus":"password"" | sudo chpasswd
 sudo chown -R nexus:nexus nexus-3.42.0-01/ && sudo chown -R nexus:nexus sonatype-work/
 ```
 
-## Nexus configuration
+## Nexus configuration and startup
 ```Bash
 sudo vim nexus-3.42.0-01/bin/nexus.rc
 run_as_user="nexus"
 ```
 
 ```Bash
-su - nexus && /opt/nexus-3.42.0-01/bin/nexus start
+su - nexus
+```
+
+```Bash
+/opt/nexus-3.42.0-01/bin/nexus start
 ```
 
 ## Test
@@ -62,10 +66,10 @@ ps aux | grep nexus && netstat -lnpt
 
 > open port 8081 on DigitalOcean - inbound
 
-<<<<<<< HEAD
 > Browse!
 
-> admin password
-> ```Bash
-> cat /opt/sonatype-work/nexus3/admin.password
-> ```
+## Access 
+
+```Bash
+cat /opt/sonatype-work/nexus3/admin.password
+```
