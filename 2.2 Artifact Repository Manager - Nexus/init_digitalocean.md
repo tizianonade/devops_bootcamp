@@ -62,4 +62,13 @@ ps aux | grep nexus && netstat -lnpt
 
 > open port 8081 on DigitalOcean - inbound
 
+<<<<<<< HEAD
 > Browse!
+=======
+> Browse!
+
+> admin password
+> ```Bash
+> cat /opt/sonatype-work/nexus3/admin.password
+> ```
+>>>>>>> 4be92e7 (Firt commit)
