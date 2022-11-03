@@ -25,7 +25,7 @@ So they ask you to setup Nexus in the company and create repositories for 2 diff
     - role description: manage maven repo
     - privileges: nx-repository-view-maven2-mavenProjectTeam2-*
 2. Create new user
-    - id: thomas_02
+    - id: thomas01
     - first name: Thomas
     - last name: Shan
     - email: thomas.shan@company.com
