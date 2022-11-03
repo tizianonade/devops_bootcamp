@@ -18,12 +18,12 @@ So they ask you to setup Nexus in the company and create repositories for 2 diff
 2. Create a new repo for the npm artifact
     - Recipe: npm hosted
     - blob: blob-1
-    - name: npm-local-repo
+    - name: npmProjectTeam1
 3. Create a new user for team 1
     3.1 Create a new role
         - type: nexus role
         - role id: team-p1
-        - role name: Teamp p1
+        - role name: Team p1
         - role description: manage npm repo
         - privileges: nx-repository-view-npm-*-*
     3.2 Create a new user
@@ -34,7 +34,7 @@ So they ask you to setup Nexus in the company and create repositories for 2 diff
         - status: active
         - roles: Team project 1
 
-## Exercise 3 - Build & publish npm tar
+# Exercise 3 - Build & publish npm tar
 
 1. Clone a npm application from remote repo
 
@@ -87,10 +87,17 @@ npm pack
 
 > My case: 
 > > npm-repo-url-in-nexus: http://localhost:8081/repository/npmProjectTeam1/
-> > package-name: npmProjectTeam1
+> > package-name: bootcamp-node-project-1.0.0.tgz
 
 ```Bash
-npm publish --registry={npm-repo-url-in-nexus} {package-name}
+npm login --registry=https://my.nexus.com/repository/npm-public/
 ```
 
+> Username: paul_01
+> Password: *********
+> Email: paul.apple@company.com
+
+```Bash
+npm publish --registry="http://localhost:8081/repository/npmProjectTeam1/" bootcamp-node-project-1.0.0.tgz
+```
 
