@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "id": "bnBtUHJvamVjdFRlYW0xOjE4ZGRlY2NkZmI0OTFlY2JjMDA0Yjk0NzQwYzdkNGVh",
+      "repository": "npmProjectTeam1",
+      "format": "npm",
+      "group": null,
+      "name": "bootcamp-node-project",
+      "version": "1.0.0",
+      "assets": [
+        {
+          "downloadUrl": "http://127.0.0.1:8081/repository/npmProjectTeam1/bootcamp-node-project/-/bootcamp-node-project-1.0.0.tgz",
+          "path": "bootcamp-node-project/-/bootcamp-node-project-1.0.0.tgz",
+          "id": "bnBtUHJvamVjdFRlYW0xOjRiMzc4NjUzNTkxYzY3MjJiNzBlNDgyODYxZjMyZjlh",
+          "repository": "npmProjectTeam1",
+          "format": "npm",
+          "checksum": {
+            "sha1": "d93c33681f07e4b2404411d232ba388c7a8d5381"
+          },
+          "contentType": "application/gzip",
+          "lastModified": "2022-11-02T14:16:54.416+00:00",
+          "lastDownloaded": "2022-11-03T14:54:33.061+00:00",
+          "uploader": "paul_01",
+          "uploaderIp": "127.0.0.1",
+          "fileSize": 79414,
+          "blobCreated": "2022-11-02T14:16:54.416+00:00",
+          "npm": {
+            "name": "bootcamp-node-project",
+            "version": "1.0.0"
+          }
+        }
+      ]
+    }
+  ],
+  "continuationToken": null
+}
