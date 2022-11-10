@@ -132,3 +132,9 @@ docker run \
 ```Bash
 http://localhost:9000
 ```
+
+# Exercise 3: Create mysql & PMA container with Docker Compose
+
+```Bash
+docker compose -f mysql.yaml up
+```
