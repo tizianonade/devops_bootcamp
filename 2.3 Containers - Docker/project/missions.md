@@ -13,7 +13,7 @@ git clone https://gitlab.com/devops-bootcamp3/bootcamp-java-mysql.git
 
 > [Docker Hub](https://hub.docker.com/)
 
-1. Pull MySQL image from docker hub 
+1. Pull MySQL image from docker hub
 
 ```Bash
 docker pull mysql
@@ -138,3 +138,28 @@ http://localhost:9000
 ```Bash
 docker compose -f mysql.yaml up
 ```
+
+# Exercise 4: Dockerize your Java Application
+Now you are done with testing the application locally with Mysql database and want to deploy it on theserver to make it accessible for others in the team, so they can edit information.
+And since your DB and DB UI are running as docker containers, you want to make your app also run asa docker container. So you can all start them using 1 docker-compose file on the server. So you do thefollowing
+
+> We should replace the share the new hostname of the DB_SERVER global environment which is not "localhost" anymore but it is the name of the container, "mysql" in our case
+
+**Build the image**
+```Bash
+docker build -t java_app:1.0 --build-arg USERNAME=john --build-arg DATABASE=db_java_app --build-arg HOSTNAME=mysql --build-arg PASSWORD=john123 .
+```
+
+**Run the container with terminal**
+```Bash
+docker run -it --name app --network mysql_network -p 8080:8080 java_app:1.0 /bin/sh
+```
+
+**Build the container in daemon mode**
+```Bash
+docker run -d --name app --network mysql_network -p 8080:8080 java_app:1.0
+```
+
+```Bash
+docker compose -f app.yaml up
+``` 
