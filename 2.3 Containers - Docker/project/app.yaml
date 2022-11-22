@@ -1,0 +1,15 @@
+version: '2'
+services:
+  app:
+    image: java_app:1.0
+    ports:
+      - 8080:8080
+    environment:
+      - DB_USER=$DB_USER
+      - DB_NAME=$DB_NAME
+      - DB_SERVER=mysql
+      - DB_PWD=$DB_PWD
+networks:
+  default:
+    name: mysql_network
+    external: true

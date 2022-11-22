@@ -140,9 +140,8 @@ docker compose -f mysql.yaml up
 ```
 
 # Exercise 4: Dockerize your Java Application
-Now you are done with testing the application locally with Mysql database and want to deploy it on theserver to make it accessible for others in the team, so they can edit information.
-And since your DB and DB UI are running as docker containers, you want to make your app also run asa docker container. So you can all start them using 1 docker-compose file on the server. So you do thefollowing
 
+> Cf Dockerfile
 > We should replace the share the new hostname of the DB_SERVER global environment which is not "localhost" anymore but it is the name of the container, "mysql" in our case
 
 **Build the image**
@@ -159,7 +158,7 @@ docker run -it --name app --network mysql_network -p 8080:8080 java_app:1.0 /bin
 ```Bash
 docker run -d --name app --network mysql_network -p 8080:8080 java_app:1.0
 ```
-
+**With Docker Compose**
 ```Bash
 docker compose -f app.yaml up
 ``` 
