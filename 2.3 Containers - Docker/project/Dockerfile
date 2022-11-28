@@ -11,6 +11,7 @@ ENV DB_USER=$USERNAME \
     DB_PWD=$PASSWORD
 
 RUN mkdir -p /app/
+RUN sleep 60
 
 COPY app.jar /app/app.jar
 

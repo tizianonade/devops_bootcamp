@@ -136,7 +136,7 @@ http://localhost:9000
 # Exercise 3: Create mysql & PMA container with Docker Compose
 
 ```Bash
-docker compose -f mysql.yaml up
+docker compose -f mysql.yaml up -d
 ```
 
 # Exercise 4: Dockerize your Java Application
@@ -271,4 +271,12 @@ docker push <NEXUS IP ADDRESS>:<PORT DOCKER REPO>/java_app:1.0
 
 ```Bash
 curl -u john:password -X GET 'http://127.0.0.1:8081/service/rest/v1/components?repository=javaAppRepo'
+```
+
+# Exercise 6: Add application to docker-compose
+
+**RUN sleep 60** must be added in the Dockerfile to wait until the mysql container is ready to receive connections
+
+```Bash
+docker compose -f mysql_app.yaml up -d
 ```

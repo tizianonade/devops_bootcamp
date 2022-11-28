@@ -1,5 +1,6 @@
 version: '2'
 services:
+
   mysql:
     image: mysql:latest
     ports:
@@ -11,6 +12,7 @@ services:
       - MYSQL_PASSWORD=$DB_PWD
     volumes:
       - msql-data:/var/lib/msql
+    container_name: mysql
 
   pma:
     image: phpmyadmin:latest
@@ -18,6 +20,20 @@ services:
       - 9000:80
     environment:
       - PMA_HOST=mysql
+    container_name: pma
+
+  app:
+    image: java_app:2.0
+    depends_on:
+      - "mysql"
+    ports:
+      - 8080:8080
+    environment:
+      - DB_USER=$DB_USER
+      - DB_NAME=$DB_NAME
+      - DB_SERVER=mysql
+      - DB_PWD=$DB_PWD
+    container_name: app
 
 volumes:
   msql-data:
