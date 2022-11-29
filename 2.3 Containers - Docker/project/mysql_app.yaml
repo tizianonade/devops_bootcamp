@@ -1,0 +1,45 @@
+version: '2'
+services:
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=$DB_ROOT_PWD
+      - MYSQL_DATABASE=$DB_NAME
+      - MYSQL_USER=$DB_USER
+      - MYSQL_PASSWORD=$DB_PWD
+    volumes:
+      - msql-data:/var/lib/msql
+    container_name: mysql
+
+  pma:
+    image: phpmyadmin:latest
+    ports: 
+      - 9000:80
+    environment:
+      - PMA_HOST=mysql
+    container_name: pma
+
+  app:
+    image: java_app:2.0
+    depends_on:
+      - "mysql"
+    ports:
+      - 8080:8080
+    environment:
+      - DB_USER=$DB_USER
+      - DB_NAME=$DB_NAME
+      - DB_SERVER=mysql
+      - DB_PWD=$DB_PWD
+    container_name: app
+
+volumes:
+  msql-data:
+    driver: local
+
+networks:
+  default:
+    name: mysql_network
+    external: true
